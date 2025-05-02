@@ -1,7 +1,6 @@
-# Project 2 Public Key Encryption Algorithm
+RSA Public Key Encryption Algorithm
 
-**Name:** Vishnu Gelle
-**Email address:** d.gelle@wsu.edu
+Developed by Vishnu Gelle
 
 This is an implementation of a public-key encryption system that supports key generation, encryption, and decryption of messages. The system is based on a RSA algorithm where a public-private key pair is used for encryption and decryption operations.
 
