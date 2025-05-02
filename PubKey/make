@@ -1,0 +1,28 @@
+# Compiler
+CC = gcc
+
+# Target executable
+TARGET = pubkey
+
+# Source file
+SRC = pubkey.c
+
+# Build rule
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) -o $(TARGET) $(SRC)
+
+genkey: $(TARGET)
+	./$(TARGET)  -genkey
+
+encrypt: $(TARGET)
+	./$(TARGET)  -e -k pubkey.txt -in ptxt.txt -out ctxt.txt
+
+decrypt: $(TARGET)
+	./$(TARGET)  -d -k prikey.txt -in ctxt.txt -out decrypted.txt
+
+clean:
+	find . -type f ! -name '*.c' ! -name '*.md' ! -name 'make' ! -name 'ptxt.txt' ! -name 'ctxt.txt' -exec rm -f {} +
+
+.PHONY: all clean
